@@ -1,2 +1,2 @@
-# barcode-scanner
-Web application to read barcode
+# theme-barcode-scanner
+Theme mikro-cms to scan barcode
