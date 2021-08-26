@@ -1,0 +1,19 @@
+.Loading {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(38, 50, 56, 0.85);
+}
+.Loading p {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+}
+

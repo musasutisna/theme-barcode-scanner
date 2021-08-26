@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-hashing none --prod --deploy-url=/public/@musasutisna/theme-barcode-scanner/ --base-href=/public/@musasutisna/theme-barcode-scanner/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
