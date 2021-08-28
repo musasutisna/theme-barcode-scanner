@@ -12,13 +12,15 @@ import * as exceptionReducer from '@state/exception.reducer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { MenusComponent } from './components/menus/menus.component';
 
 declare const ENV: any;
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent
+    LoadingComponent,
+    MenusComponent
   ],
   imports: [
     BrowserModule,
