@@ -1,8 +1,7 @@
 import {
   Directive,
   ElementRef,
-  OnInit,
-  Input
+  OnInit
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as scannerActions from '@state/scanner.actions';
@@ -38,27 +37,29 @@ export class CameraDecoderDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    Module.onRuntimeInitialized = async () => {
-      this.api = {
-        scan_image: Module.cwrap('scan_image', '', ['number', 'number', 'number']),
-        create_buffer: Module.cwrap('create_buffer', 'number', ['number', 'number']),
-        destroy_buffer: Module.cwrap('destroy_buffer', '', ['number'])
-      };
-
-      // set the function that should be called whenever a barcode is detected
-      Module['processResult'] = (symbol: string, data: string, polygon: any) => {
-        if (data !== '0') {
-          this.stopDecoder();
-          this.store.dispatch(scannerActions.dataDetected({ data: { symbol, data } }));
-        }
-      }
-
-      if (this.getDeviceSupported()) {
-        this.createMedia();
-      } else {
-        this.setMessage('No Camera Supported!');
-      }
+    this.api = {
+      scan_image: Module.cwrap('scan_image', '', ['number', 'number', 'number']),
+      create_buffer: Module.cwrap('create_buffer', 'number', ['number', 'number']),
+      destroy_buffer: Module.cwrap('destroy_buffer', '', ['number'])
     };
+
+    // set the function that should be called whenever a barcode is detected
+    Module['processResult'] = (symbol: string, data: string, polygon: any) => {
+      if (data !== '0') {
+        let scannedDate: any = new Date();
+
+        scannedDate = scannedDate.toString();
+
+        this.stopDecoder();
+        this.store.dispatch(scannerActions.dataDetected({ data: { symbol, data, date: scannedDate }}));
+      }
+    }
+
+    if (this.getDeviceSupported()) {
+      this.createMedia();
+    } else {
+      this.setMessage('No Camera Supported!');
+    }
   }
 
   private getDeviceSupported(): boolean {
