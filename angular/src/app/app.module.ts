@@ -16,9 +16,13 @@ import { AppComponent } from './app.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { ScanComponent } from './components/scan/scan.component';
+import { HistoryComponent } from './components/history/history.component';
+
 import { CameraDecoderDirective } from './directives/camera-decoder.directive';
+import { BarcodeGeneratorDirective } from './directives/barcode-generator.directive';
 
 declare const ENV: any;
+declare const Module: any;
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ declare const ENV: any;
     LoadingComponent,
     MenusComponent,
     ScanComponent,
-    CameraDecoderDirective
+    CameraDecoderDirective,
+    HistoryComponent,
+    BarcodeGeneratorDirective
   ],
   imports: [
     BrowserModule,

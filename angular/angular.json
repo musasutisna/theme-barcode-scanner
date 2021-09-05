@@ -28,7 +28,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "bwip-js-min.js",
+                "input": "./node_modules/bwip-js/dist",
+                "output": "/assets/libs/bwip-js"
+              }
             ],
             "styles": [
               "src/styles.scss"
