@@ -9,6 +9,7 @@ import { Data } from '@models/data.model';
 import * as scannerActions from '@state/scanner.actions';
 
 export interface ScannerState {
+  devices: any[],
   histories: Data[],
   load: {
     allowToLoad: boolean,
@@ -19,6 +20,7 @@ export interface ScannerState {
 }
 
 export const initialState: ScannerState = {
+  devices: [],
   histories: [],
   load: {
     allowToLoad: true,
@@ -30,6 +32,17 @@ export const initialState: ScannerState = {
 
 const scannerReducer = createReducer(
   initialState,
+  on(
+    scannerActions.loadDeviceSuccess,
+    (state, action) => ({
+      ...state,
+      devices: action.devices,
+      load: {
+        ...state.load,
+        allowToLoad: false
+      }
+    })
+  ),
   on(
     scannerActions.loadHistory,
     (state, action) => ({
@@ -60,6 +73,11 @@ export function reducer(state: ScannerState | undefined, action: Action) {
 }
 
 const getScannerFeatureState = createFeatureSelector<ScannerState>('scanner');
+
+export const selectDevices = createSelector(
+  getScannerFeatureState,
+  (state: ScannerState) => state.devices
+);
 
 export const selectHistories = createSelector(
   getScannerFeatureState,

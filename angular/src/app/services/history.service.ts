@@ -8,7 +8,7 @@ export class HistoryService {
 
   constructor() { }
 
-  public addNewData(data: Data): void
+  addNewData(data: Data): void
   {
     let currentHistory: any = window.localStorage.getItem('history');
 
@@ -29,7 +29,7 @@ export class HistoryService {
     window.localStorage.setItem('history', JSON.stringify(currentHistory));
   }
 
-  public loadCurrentHistory(offset: number, length: number): any {
+  loadCurrentHistory(offset: number, length: number): any {
     let currentHistory: any = window.localStorage.getItem('history');
 
     if (currentHistory === null) {

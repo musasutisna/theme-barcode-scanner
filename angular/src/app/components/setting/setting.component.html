@@ -1,0 +1,15 @@
+<div id="Setting">
+  <div class="Main">
+    <app-menus></app-menus>
+    <div class="Content">
+      <h1 class="Title">Barcode Scanner</h1>
+      <form class="Setting" (ngSubmit)="saveSetting()">
+        <select name="setting" [(ngModel)]="device">
+          <option value="none" style="display: none;">Select Device</option>
+          <option *ngFor="let device of (devices$ | async); let deviceIndex = index;" [value]="deviceIndex">{{ device.label }}</option>
+        </select>
+        <button type="submit">Simpan</button>
+      </form>
+    </div>
+  </div>
+</div>

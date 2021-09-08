@@ -1,0 +1,37 @@
+.Setting {
+  display: flex;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  select {
+    margin-top: 1rem;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+
+    option {
+      width: 100%;
+      font-size: 0.75rem;
+      color: #333333;
+    }
+  }
+  button {
+    margin-top: 1rem;
+    align-self: flex-end;
+    min-width: 7.5rem;
+    height: 2.5rem;
+    background: #55AADD;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+    border: 0.1rem solid #333333;
+    border-radius: 0.25rem;
+  }
+}

@@ -17,6 +17,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { ScanComponent } from './components/scan/scan.component';
 import { HistoryComponent } from './components/history/history.component';
+import { SettingComponent } from './components/setting/setting.component';
 
 import { CameraDecoderDirective } from './directives/camera-decoder.directive';
 import { BarcodeGeneratorDirective } from './directives/barcode-generator.directive';
@@ -26,13 +27,14 @@ declare const Module: any;
 
 @NgModule({
   declarations: [
+    CameraDecoderDirective,
+    BarcodeGeneratorDirective,
     AppComponent,
     LoadingComponent,
     MenusComponent,
     ScanComponent,
-    CameraDecoderDirective,
     HistoryComponent,
-    BarcodeGeneratorDirective
+    SettingComponent
   ],
   imports: [
     BrowserModule,

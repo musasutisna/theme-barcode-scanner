@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ScanComponent } from '@components/scan/scan.component'
 import { HistoryComponent } from '@components/history/history.component';
+import { SettingComponent } from '@components/setting/setting.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
   }
 ];
 
