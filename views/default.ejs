@@ -1,21 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="utf-8">
-  <title>Angular</title>
+  <title><%= page.page_title %></title>
   <base href="/public/@musasutisna/theme-barcode-scanner/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v98/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script src="assets/libs/zbar/a.out.js"></script>
+  <script src="assets/libs/bwip-js/bwip-js-min.js"></script>
   <script>
     const ENV = {
       appName: 'theme-barcode-scanner',
-      // pageUrl: "<%= page.page_url.replaceAll('/*', '') %>"
-      pageUrl: "/theme-barcode-scanner"
+      pageUrl: "<%= page.page_url.replaceAll('/*', '') %>"
     }
   </script>
-  <link rel="stylesheet" href="/public/@musasutisna/theme-barcode-scanner/styles.css"></head>
-  <body>
-    <app-root></app-root>
-    <script src="/public/@musasutisna/theme-barcode-scanner/runtime.js" defer></script><script src="/public/@musasutisna/theme-barcode-scanner/polyfills.js" defer></script><script src="/public/@musasutisna/theme-barcode-scanner/main.js" defer></script>
-  </body>
+  <link rel="stylesheet" href="/public/@musasutisna/theme-barcode-scanner/styles.css">
+</head>
+<body>
+  <app-root></app-root>
+  <script src="/public/@musasutisna/theme-barcode-scanner/runtime.js" defer=""></script><script src="/public/@musasutisna/theme-barcode-scanner/polyfills.js" defer=""></script><script src="/public/@musasutisna/theme-barcode-scanner/main.js" defer=""></script></body>
 </html>
