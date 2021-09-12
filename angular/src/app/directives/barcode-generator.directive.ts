@@ -30,18 +30,18 @@ export class BarcodeGeneratorDirective implements AfterViewInit {
       });
 
       this.element.nativeElement.src = domCanvas.toDataURL('image/png');
-    } catch (err) {
-
+    } catch (err: any) {
+      console.error(err.message)
     }
   }
 
   private getBarcodeType(type: string) {
     if (type == 'EAN-13') {
       return 'ean13';
-    } else if (type == 'QR-CODE') {
-      return 'qrcode';
-    } else {
+    } else if (type == 'CODE-128') {
       return 'code128';
+    } else {
+      return 'qrcode';
     }
   }
 }
