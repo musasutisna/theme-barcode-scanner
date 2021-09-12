@@ -6,7 +6,7 @@
       <div class="History">
         <div *ngFor="let history of (histories$ | async); let historyIndex = index;" class="BarcodeItem">
           <div class="BarcodeItemImg">
-            <img appBarcodeGenerator [symbol]="history.symbol" [data]="history.data" />
+            <img [class]="history.symbol" appBarcodeGenerator [symbol]="history.symbol" [data]="history.data" />
           </div>
           <ul class="BarcodeItemInfo">
             <li>
