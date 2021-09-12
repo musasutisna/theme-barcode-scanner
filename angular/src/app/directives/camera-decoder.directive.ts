@@ -1,7 +1,8 @@
 import {
   Directive,
   ElementRef,
-  OnInit
+  OnInit,
+  OnDestroy
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as scannerActions from '@state/scanner.actions';
@@ -11,7 +12,7 @@ declare const Module: any;
 @Directive({
   selector: '[appCameraDecoder]'
 })
-export class CameraDecoderDirective implements OnInit {
+export class CameraDecoderDirective implements OnInit, OnDestroy {
   private api: any;
   private domCanvas!: HTMLCanvasElement;
   private domVideo!: HTMLVideoElement;
@@ -60,6 +61,10 @@ export class CameraDecoderDirective implements OnInit {
     } else {
       this.setMessage('No Camera Supported!');
     }
+  }
+
+  ngOnDestroy(): void {
+    this.stopDecoder();
   }
 
   private getDeviceSupported(): boolean {
